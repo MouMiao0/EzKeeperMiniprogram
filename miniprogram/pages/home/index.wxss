@@ -1,0 +1,95 @@
+/* pages/home/index.wxss */
+.container{
+  background-color: var(--main-bg-color);
+  width: 100vw;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20rpx 0rpx;
+}
+
+.addBill{
+  position: fixed;
+  bottom: 20rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 160rpx;
+}
+
+.round{
+  background-color: var(--form-bg-color);
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 140rpx;
+  font-size: 110rpx;
+}
+
+.navigationBar{
+  position: relative;
+  background-color: #222831;
+  display: flex;
+  justify-content: center;
+  line-height: 190rpx;
+  font-weight: bold;
+  font-size: 44rpx;
+  color: #fff;
+}
+
+.navUser{
+  position: absolute;
+  width: 80rpx;
+  height: 80rpx;
+  left: 30rpx;
+  bottom: 0;
+  margin: auto;
+}
+
+.leftModel{
+  height: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  left: -240rpx;
+  top: 0px;
+}
+
+.userInfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-start;
+  align-items: center;
+  background-color: var(--second-text-color);
+  height: 100%;
+  width: 240rpx;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+}
+
+.active .userInfo{
+  margin-left: 240rpx;
+}
+
+.leftMask{
+  width: 100vw;
+  height: 100%;
+}
+
+.userName{
+  color: #fff;
+  font-size: 58rpx;
+  text-align: center;
+  padding: 20rpx;
+  margin-top: 225rpx;
+}
+
+.logout{
+  color: #fff;
+  border: 1rpx solid;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  margin-top: 55rpx;
+}

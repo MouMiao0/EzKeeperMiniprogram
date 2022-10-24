@@ -1,0 +1,126 @@
+/* Components/bills/index.wxss */
+.itemContainer{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+.billInfo{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin:  40rpx auto;
+  width: 100%;
+  transform: translateX(200rpx);
+  -webkit-transform: translateX(200rpx);
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  margin-left: -200rpx;
+}
+
+.delBlock{
+  transform: translateX(200rpx);
+  -webkit-transform: translateX(200rpx);
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  margin-left: -200rpx;
+  background-color: var(--second-text-color);
+  color: orange;
+  width: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 50rpx;
+}
+
+.touch-move-active .billInfo, .touch-move-active .delBlock{
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+}
+
+.headerBar{
+  display: flex;
+  justify-content: space-between;
+  width: 95vw;
+  color: #fff;
+}
+
+.billContent{
+  display: flex;
+  background-color: white;
+  margin: 20rpx auto;
+  padding: 14rpx;
+  border-radius: 5rpx;
+  justify-content: space-between;
+  align-content: center;
+  width: 90vw;
+  align-items: center;
+  height: 99rpx;
+}
+
+.note{
+  position: absolute;
+  font-size: 28rpx;
+  left: 300rpx;
+  bottom: 22rpx;
+  width: 300rpx;
+  display: flex;
+}
+
+.model{
+  position: fixed;
+  background-color: #7db1c5;
+  color: rgb(20, 20, 20);
+  padding: 30rpx;
+  border-radius: 20rpx;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 550rpx;
+  height: 760rpx;
+  margin: auto;
+  z-index: 1;
+}
+
+.modelTitle{
+  text-align: center;
+  font-weight: bold;
+  font-size: 45rpx;
+  margin-bottom: 20rpx;
+}
+
+.modelItem{
+  display: flex;
+  margin-top: 20rpx;
+  justify-content: start;
+}
+
+.itemSelector{
+  margin-left: 20rpx;
+  background-color: rgb(98, 192, 35);
+  color: rgb(253, 251, 255);
+  padding: 10rpx;
+  text-align: center;
+  border-radius: 5rpx;
+}
+
+.modelInput{
+  background-color: white;
+  border-radius: 5rpx;
+  flex: 1;
+  margin-left: 20rpx;
+  padding: 0rpx 20rpx;
+  color: #333;
+}
+
+.modelNote{
+  background-color: #fff;
+  color: #333;
+  border-radius: 20rpx;
+  height: 200rpx;
+  padding: 20rpx;
+}

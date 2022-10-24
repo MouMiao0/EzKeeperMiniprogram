@@ -1,0 +1,277 @@
+/* pages/addBill/index.wxss */
+.container{
+  height: 100vh;
+  padding: 0rpx;
+  background-color: var(--form-bg-color);
+}
+
+.billInfo{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 130rpx;
+  width: 100vw;
+}
+
+.headerTabber{
+  height: 120rpx;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+.tabberItem{
+  flex: auto;
+  position: relative;
+  color: var(--main-text-color);
+  line-height: 100rpx;
+  transition: 1.3s;
+}
+
+.tabberText{
+  position:absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  line-height: 120rpx;
+  font-size: 40rpx;
+  font-weight: bolder;
+  z-index: 2;
+}
+
+.tabberRadio .wx-radio-input{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0;
+  z-index: 1;
+  background-color: var(--main-bg-color);
+}
+
+.tabberRadio .wx-radio-input.wx-radio-input-checked::before{
+  font-size: 0;
+}
+
+.operation{
+  position: absolute;
+  z-index: 2;
+  width: 100rpx;
+  height: 100rpx;
+  right: 15rpx;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+}
+
+.gearImg{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.delButton{
+  background-color: red;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 50rpx;
+  width: 50rpx;
+  height: 50rpx;
+  text-align: center;
+  font-weight: bold;
+  line-height: 35rpx;
+  position: absolute;
+  top: -10rpx;
+  right: -25rpx;
+}
+
+.radioGroup{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 20rpx;
+  padding: 0rpx 30rpx;
+}
+
+.categoryItem{
+  display: block;
+  position: relative;
+  background-color: var(--second-text-color);
+  color: var(--main-text-color);
+  text-align: center;
+  line-height: 135rpx;
+  margin-top: 20rpx;
+  width: 140rpx;
+  height: 140rpx;
+  padding: 20rpx;
+  border-radius: 20rpx;
+}
+
+.categoryRadio .wx-radio-input{
+  border-radius: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 140rpx;
+  height: 140rpx;
+  margin: auto;
+  position:absolute;
+  background-color: #ffffff00;
+  border-radius: 20rpx;
+  border: none;
+}
+
+.categoryRadio .wx-radio-input.wx-radio-input-checked{
+  border: 5rpx solid rgb(255, 255, 255);
+  background-color: #ffffff00;
+}
+
+.categoryRadio .wx-radio-input.wx-radio-input-checked::before{
+  font-size: 0;
+}
+
+.bottomBar{
+  position: fixed;
+  bottom: 20rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.inputNumber{
+  background-color: #fff;
+  display: flex;
+  height: 70rpx;
+  border-top: 1rpx solid var(--second-text-color);
+  border-radius: 5rpx;
+  border-bottom: 1rpx solid #07c160;
+  align-items: center;
+  padding: 0rpx 20rpx;
+}
+
+.numberInput{
+  flex: auto;
+  margin-left: 20rpx;
+}
+
+.confirmButton{
+  display: flex;
+}
+
+.confirmButton .button{
+  border-radius: 0;
+}
+
+.customCategory{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  width: 400rpx;
+  height: 400rpx;
+  background-color: var(--main-bg-color);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 35rpx;
+  border-radius:20rpx;
+}
+
+
+.customCategory .title{
+  text-align: center;
+  font-weight: bold;
+  margin-top: -10rpx;
+}
+
+.customCategory .item{
+  display: flex;
+  margin-top: 26rpx;
+  font-size: 35rpx;
+}
+
+.customCategory .input{
+  flex: 1;
+  background-color: var(--form-bg-color);
+  margin-left: 20rpx;
+  border-radius: 5rpx;
+  color: #000;
+}
+
+.customCategory .switch{
+  line-height: 100rpx;
+}
+
+.customCategory .btnL{
+  border-top-right-radius: 0rpx;
+  border-bottom-right-radius: 0rpx;
+}
+
+.customCategory .btnR{
+  border-top-left-radius: 0rpx;
+  border-bottom-left-radius: 0rpx;
+}
+
+.delMask{
+  /* background-color: #000; */
+  width: 100%;
+  height: 100%;
+  position:absolute;
+  top: 0;
+  left: 0;
+}
+
+.confirmModel{
+  position:absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+.modelContent{
+  background-color: #7db1c5;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 60%;
+  height: 590rpx;
+  padding: 80rpx;
+  margin: auto;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputNote{
+  margin-top: 30rpx;
+}
+
+.noteInput{
+  background-color: #fff;
+  width: auto;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  border-top: 1px solid #777;
+  color: #000;
+  padding: 10rpx;
+}

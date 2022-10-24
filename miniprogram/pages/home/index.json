@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "bills": "../../Components/bills"
+  },
+  "backgroundColor": "#222831",
+  "enablePullDownRefresh": true,
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "white"
+}

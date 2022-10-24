@@ -1,0 +1,18 @@
+<!--pages/home/index.wxml-->
+<view class="navigationBar" style="height: {{navBarHeight + statusBarHeight}}px;">
+  <image class="navUser" style="top:{{statusBarHeight}}px;" src="/resource/png/user.png" bindtap="showLeftModel"></image>
+  EzKeeper
+</view>
+<view class="container">
+  <bills wx:for="{{bills}}" wx:key="id" bill="{{item}}" data-index="{{index}}" ></bills>
+  <view class="addBill" bindtap="addBill">
+    <view class="round">+</view>
+  </view>
+</view>
+<view class="{{showLeftModel ? 'active' : ''}} leftModel">
+  <view class="userInfo">
+    <view class="userName">用户:\n{{user.userName}}</view>
+    <view class="logout" bindtap="doLogout"> 退出 </view>
+  </view>
+  <view class="leftMask" hidden="{{!showLeftModel}}" bindtap="hideLeftModel"></view>
+</view>

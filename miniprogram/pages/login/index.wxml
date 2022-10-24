@@ -1,0 +1,29 @@
+<!--pages/login/index.wxml-->
+<view class="container">
+  <!-- <img src="" alt=""/> -->
+  <text class="title">{{register?"注册":"登陆"}}</text>
+  <form bindsubmit="OnSubmit">
+    <view class="userInfo">
+      <view class="inputLabel">
+        <label class="label" for="userName">用户名:</label>
+        <label class="label" for="pw">密码:</label>
+        <label class="label" for="pwCheck" hidden="{{!register}}">确认密码:</label>
+      </view>
+      <view class="inputItems">
+        <input class="inputItem" type="text" name="userName" id="userName" />
+        <input class="inputItem" type="password" name="pw" id="pw" />
+        <input class="inputItem" type="password" name="pwCheck" id="pwCheck" hidden="{{!register}}" />
+      </view>
+    </view>
+    <view class="buttons">
+      <button class="login" form-type="submit" type="primary" hidden="{{register}}">登陆</button>
+      <button class="register" form-type="submit" type="primary" hidden="{{!register}}">注册并登陆</button>
+    </view>
+    <view class="switch">
+      <button size="mini" class="switchButton" form-type="reset"  bindtap="doSwitch" hidden="{{register}}">前往注册界面</button>
+      <button size="mini" class="switchButton" form-type="reset"  bindtap="doSwitch" hidden="{{!register}}">前往登陆界面</button>
+    </view>
+  </form>
+
+
+</view>

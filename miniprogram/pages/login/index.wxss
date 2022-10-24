@@ -1,0 +1,82 @@
+/* pages/login/index.wxss */
+.container{
+  background-color: var(--main-bg-color);
+  height: 100vh;
+  padding: 190rpx 0rpx 400rpx 0rpx;
+}
+
+.title{
+  color: var(--main-text-color);
+  font-size: 60rpx;
+  font-weight: bolder;
+}
+
+.userInfo{
+  display: flex;
+  padding: 30rpx;
+  height: 300rpx;
+  width: 560rpx;
+  position: relative;
+  margin:  50rpx auto;
+}
+
+.inputLabel{
+  display: flex;
+  flex: 3;
+  justify-content: space-around;
+  align-content: space-around;
+  flex-direction: column;
+  font-weight: bold;
+  color: var(--main-bg-color);
+}
+
+.inputItems{
+  display: flex;
+  flex: 7;
+  justify-content: space-around;
+  align-content: space-around;
+  flex-direction: column;
+}
+
+.label{
+  padding: 20rpx;
+  background-color: var(--form-bg-color);
+  width: 100%;
+  min-height: 1.4rem;
+  text-align: end;
+  border-top-left-radius: 30rpx;
+  border-bottom-left-radius: 30rpx;
+}
+
+.inputItem{
+  padding: 20rpx;
+  background-color: var(--form-bg-color);
+  margin-left: 20rpx;
+  color: var(--main-bg-color);
+  border-top-right-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+}
+
+.buttons{
+  margin: auto;
+  justify-content: space-around;
+  width: 500rpx;
+}
+
+.login{
+  flex: 6;
+}
+
+.register{
+  flex: 6;
+}
+
+.switch{
+  position: absolute; 
+  right: 50rpx; 
+  bottom: 120rpx;
+}
+
+.switchButton{
+  color: var(--second-text-color);
+}

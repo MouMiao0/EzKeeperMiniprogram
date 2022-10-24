@@ -1,0 +1,57 @@
+<!--Components/bills/index.wxml-->
+<view class="{{isSlide ? 'touch-move-active' : ''}} itemContainer">
+  <view class="billInfo" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtap="openEditModel">
+    <view class="headerBar">
+      <text class="timeText">{{bill.time}}</text>
+      <text class="incomed">{{bill.category != undefined ? (bill.category.incomed ? "收入" : "支出") : "未定义分类"}}</text>
+    </view>
+    <view class="billContent">
+      <text class="category">{{bill.category != undefined ? bill.category.name : "未定义分类"}}</text>
+      <text class="note" wx:if="{{bill.note != undefined}}">
+        <block wx:for="{{bill.note}}" wx:key="index" wx:if="{{index < 8}}">{{item}}</block>
+        <block wx:if="{{bill.note.length > 8}}">...</block>
+      </text>
+      <text class="number">{{bill.number}} </text>
+    </view>
+  </view>
+  <view class="delBlock" bindtap="delBill">
+    删除
+  </view>
+</view>
+
+
+<view class="model" hidden="{{!editModel}}">
+  <form class="modelForm">
+    <view class="modelTitle">账目信息</view>
+    <label class="modelItem">
+    分类:
+      <picker mode="selector" value="{{categoryIndex}}" range="{{categories}}" range-key="name" bindchange="changeCategory">
+        <view class="itemSelector">{{edittedBill.category.name ? edittedBill.category.name: "未定义分类"}}</view>
+      </picker>
+    </label>
+    <label class="modelItem">
+    日期:
+      <picker mode="date" value="{{billDate}}" bindchange="changeDate">
+        <view class="itemSelector" >{{billDate}}</view>
+      </picker>
+    </label>
+    <label class="modelItem">
+    时间:
+      <picker mode="time" value="{{billTime}}" bindchange="changeTime">
+        <view class="itemSelector">{{billTime}}</view>
+      </picker>
+    </label>
+    <label class="modelItem">
+    金额:
+      <input bindinput="changeNumber" class="modelInput" type="number" name="number" id="number" value="{{edittedBill.number}}"/>
+    </label>
+    <label class="modelItem">
+      <view style="width: 180rpx;">备注:</view>
+      <textarea class="modelNote" bindinput="changeNote" value="{{edittedBill.note}}" />
+    </label>
+    <view class="modelItem">
+      <button type="primary" bindtap="submitChange">修改</button>
+      <button bindtap="cancelChange">取消</button>
+    </view>
+  </form>
+</view>

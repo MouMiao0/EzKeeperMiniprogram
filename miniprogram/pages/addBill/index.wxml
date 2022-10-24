@@ -1,0 +1,74 @@
+<!--pages/addBill/index.wxml-->
+<view class="container">
+  <radio-group class="headerTabber" bindchange="tabberSwitch" bindtap="hiddenAddForm">
+    <label class="tabberItem">
+      <radio class="tabberRadio" value="false" checked="true" disabled="{{!operationMode}}" />
+      <text class="tabberText" style="position: absolute; left: 0rpx; top: -3rpx">默认分类</text>
+    </label>
+    <label class="tabberItem" style="flex:{{bill.userCustom ? '2' : '1' }};">
+      <radio class="tabberRadio" value="true" />
+      <text class="tabberText">自定义分类</text>
+      <view class="operation" hidden="{{!bill.userCustom}}" bindtap="onOperation">
+        <image class="gearImg" src="/resource/png/gear.png" alt="齿轮" />
+      </view>
+    </label>
+  </radio-group>
+  <form class="billInfo">
+    <radio-group class="radioGroup" bindchange="changeCategory">
+      <view wx:for="{{billCategories}}" wx:key="id" hidden="{{bill.userCustom}}" class="categoryItem">
+        <label>
+          <radio class="categoryRadio" value="{{item.id}}" />{{item.name}}
+        </label>
+      </view>
+      <view wx:for="{{customBillCategories}}" wx:key="index" hidden="{{!bill.userCustom}}" class="categoryItem">
+        <label>
+          <radio class="categoryRadio" value="{{item.id}}" />{{item.name}}
+          <block wx:if="{{!operationMode}}">
+            <view class="delMask" catchtap="editCategory" data-index="{{index}}"></view>
+            <view class="delButton" catchtap="delCategory" data-index="{{index}}">x</view>
+          </block>
+        </label>
+      </view>
+      <view class="categoryItem" style="font-size: 100rpx; line-height: 123rpx;" bindtap="showAddForm" hidden="{{!operationMode || !bill.userCustom}}">+</view>
+    </radio-group>
+    <view class="bottomBar">
+      <view class="confirmButton" hidden="{{operationMode}}">
+        <button class="button" type="primary" bindtap="confirmDel">确认</button>
+        <button class="button" bindtap="cancelDel">取消</button>
+      </view>
+    </view>
+  </form>
+
+  <view class="confirmModel" hidden="{{hiddenNumber || !operationMode || !hiddenModelForm}}">
+    <view class="modelContent">
+      <view class="inputNumber">
+        <view style="width:120rpx;">金额:</view> 
+        <input type="number" class="numberInput" name="number" id="number" focus="{{!hiddenNumber}}" hidden="{{hiddenNumber}}" bindtouchcancel="hiddenInputNumber" bindinput="numberChange" placeholder="请输入金额" value="{{bill.number}}"/>
+      </view>
+      <view class="inputNote">
+        <view style="color: #fff; font-weight: bold;">备注:</view> 
+        <textarea type="number" class="noteInput" name="number" id="number" focus="{{!hiddenNumber}}" hidden="{{hiddenNumber}}" bindtouchcancel="hiddenInputNumber" bindinput="noteChange" placeholder="备注" value="{{bill.note}}"/>
+      </view>
+      <view class="confirmButton" hidden="{{!operationMode}}">
+        <button class="button" type="primary" bindtap="confirmBill" hidden="{{hiddenNumber}}">确认</button>
+        <button class="button" form-type="reset" bindtap="hiddenInputNumber">返回</button>
+      </view>
+    </view>
+  </view>
+
+  <view hidden="{{hiddenModelForm}}">
+    <form class="customCategory" bindsubmit="submitCategory">
+      <view class="title">{{modelTitle}}</view>
+      <label class="item">
+        分类名称<input class="input" id="name" name="name" type="text" placeholder="名称" value="{{newBillCategory.name}}" />
+      </label>
+      <label class="item switch">
+        是否为收入:<switch style="margin-left: 20rpx;" bindchange="changeCategoryIncomed" checked="{{newBillCategory.incomed}}"></switch>
+      </label>
+      <view class="item">
+        <button class="btnL" type="primary" form-type="submit">确认</button>
+        <button class="btnR" form-type="reset" bindtap="hiddenAddForm">取消</button>
+      </view>
+    </form>
+  </view>
+</view>
